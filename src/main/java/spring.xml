@@ -2,9 +2,7 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
 			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <beans>			
-	<bean id="triangle" class="beans.Triangle" autowire="byName">
-
-	</bean>
+	<bean id="triangle" class="beans.Triangle" autowire="byName"/>
 	<bean id="pointA" class="beans.Point" scope="prototype">
 		<property name="x" value="${pointA.x}"/>
 		<property name="y" value="${pointA.y}"/>
@@ -15,9 +13,7 @@
 	</bean>
 	<bean class="beans.DisplayNameBPP">
 	</bean>
-	<bean id="circle" class="beans.Circle" >
-		<property name="centre" ref="pointA" />
-	</bean>
+	<bean id="circle" class="beans.Circle" autowire="byName"/>
 	<bean id="centre" class="beans.Point">
 		<property name="x" value="${centre.x}"/>
 		<property name="y" value="${centre.y}"/>
