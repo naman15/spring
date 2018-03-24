@@ -1,5 +1,6 @@
 package beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 
 import interfaces.Shape;
@@ -15,6 +16,7 @@ public class Circle implements Shape
 	}
 
 	@Required
+	@Autowired
 	public void setCentre(Point centreParam) {
 		this.centre = centreParam;
 	}
