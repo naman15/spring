@@ -17,10 +17,10 @@
 		<property name="locations" value="pointConfig.properties" />
 	</bean>
 	<bean class="beans.DisplayNameBPP"/>
-	<bean id="circle" class="beans.Circle"/>
 	<bean id="centre" class="beans.Point">
 		<property name="x" value="${centre.x}"/>
 		<property name="y" value="${centre.y}"/>
 	</bean>
 	<context:annotation-config />
+	<context:component-scan base-package="beans" />
 </beans>

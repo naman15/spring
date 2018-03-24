@@ -1,10 +1,11 @@
 package beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
+import org.springframework.stereotype.Component;
 
 import interfaces.Shape;
 
+@Component
 public class Circle implements Shape 
 {	
 	@Autowired	

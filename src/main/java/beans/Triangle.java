@@ -1,17 +1,13 @@
 package beans;
 
-import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.context.ApplicationContext;
 import interfaces.Shape;
 
 public class Triangle implements Shape ,BeanNameAware,InitializingBean,DisposableBean
 {
 	private Point pointA;
-	private ApplicationContext context=null;
-	
 	public Point getPointA() {
 		return pointA;
 	}
