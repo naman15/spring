@@ -24,7 +24,7 @@ public class Triangle implements Shape , ApplicationContextAware,BeanNameAware,I
 
 	public  void draw() 
 	{
-		System.out.println("Shape Drawn from Point - " + pointA);
+		System.out.println("Shape Drawn from Point - " + pointA.hashCode());
 	}
 
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException 

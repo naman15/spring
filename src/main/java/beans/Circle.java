@@ -16,7 +16,7 @@ public class Circle implements Shape
 
 	public void draw() 
 	{
-		System.out.println("Shape Drawn of circle from point - " + centre);
+		System.out.println("Shape Drawn of circle from point - " + centre.hashCode());
 	}
 
 }
