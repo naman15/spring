@@ -13,4 +13,6 @@
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
 		<property name="locations" value="pointConfig.properties" />
 	</bean>
+	<bean class="beans.DisplayNameBPP">
+	</bean>
 </beans>
