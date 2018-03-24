@@ -6,7 +6,11 @@
 
 	</bean>
 	<bean id="pointA" class="beans.Point">
-		<property name="x" value="1"/>
-		<property name="y" value="2"/>
+		<property name="x" value="${pointA.x}"/>
+		<property name="y" value="${pointA.y}"/>
+	</bean>
+	<bean class="beans.beanFactoryPostProcessor" />
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
+		<property name="locations" value="pointConfig.properties" />
 	</bean>
 </beans>
