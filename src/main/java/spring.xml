@@ -21,4 +21,5 @@
 		<property name="x" value="${centre.x}"/>
 		<property name="y" value="${centre.y}"/>
 	</bean>
+	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
 </beans>
