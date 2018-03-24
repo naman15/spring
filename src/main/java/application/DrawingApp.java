@@ -3,7 +3,6 @@ package application;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import beans.Triangle;
 import interfaces.Shape;
 
 public class DrawingApp 
@@ -14,7 +13,7 @@ public class DrawingApp
 	{
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		context.registerShutdownHook();
-		shape = (Triangle)context.getBean("triangle");
+		shape = (Shape)context.getBean("triangle");
 		shape.draw();
 	}
 }
