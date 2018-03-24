@@ -5,11 +5,9 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
-
 import interfaces.Shape;
 
-public class Triangle implements Shape , ApplicationContextAware,BeanNameAware,InitializingBean,DisposableBean
+public class Triangle implements Shape ,BeanNameAware,InitializingBean,DisposableBean
 {
 	private Point pointA;
 	private ApplicationContext context=null;
@@ -24,13 +22,10 @@ public class Triangle implements Shape , ApplicationContextAware,BeanNameAware,I
 
 	public  void draw() 
 	{
-		System.out.println("Shape Drawn from Point - " + pointA.hashCode());
+		System.out.println("Shape Drawn from Point - " + pointA);
 	}
 
-	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException 
-	{
-		this.context=applicationContext;
-	}
+	
 
 	public void destroy() throws Exception {
 		System.out.println("Bean Destroyed");

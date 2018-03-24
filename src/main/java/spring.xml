@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
-			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
-<beans>			
-	<bean id="triangle" class="beans.Triangle" autowire="byName"/>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:integration="http://www.springframework.org/schema/integration"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+     http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
+     http://www.springframework.org/schema/context 
+     http://www.springframework.org/schema/context/spring-context-4.0.xsd">		
+	<bean id="triangle" class="beans.Triangle" />
 	<bean id="pointA" class="beans.Point" scope="prototype">
 		<property name="x" value="${pointA.x}"/>
 		<property name="y" value="${pointA.y}"/>
@@ -13,10 +18,9 @@
 	</bean>
 	<bean class="beans.DisplayNameBPP"/>
 	<bean id="circle" class="beans.Circle"/>
-	<!--  <bean id="centre" class="beans.Point">
+	<bean id="centre" class="beans.Point">
 		<property name="x" value="${centre.x}"/>
 		<property name="y" value="${centre.y}"/>
-	</bean> -->
-	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
-	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+	</bean>
+	<context:annotation-config />
 </beans>
