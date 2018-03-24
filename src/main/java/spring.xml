@@ -9,4 +9,6 @@
 		<property name="x" value="1"/>
 		<property name="y" value="2"/>
 	</bean>
+	<bean class="beans.DisplayNameBPP">
+	</bean>
 </beans>
