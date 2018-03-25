@@ -21,6 +21,13 @@
 		<property name="x" value="${centre.x}"/>
 		<property name="y" value="${centre.y}"/>
 	</bean>
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>message</value>
+			</list>
+		</property>
+	</bean>
 	<context:annotation-config />
 	<context:component-scan base-package="beans" />
 </beans>

@@ -16,5 +16,6 @@ public class DrawingApp
 		shape1.draw();
 		Shape shape2 = (Shape)context.getBean("circle");
 		shape2.draw();
+		System.out.println(context.getMessage("greetings", null, "Default Greeting",null));
 	}
 }
