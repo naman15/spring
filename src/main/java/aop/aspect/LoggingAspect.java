@@ -9,18 +9,28 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingAspect 
 {
-	@Before("allGetters()")
+	@Before("allGetters() && allCircleMethods()")
 	public void loggingAdvice() 
 	{
 		System.out.println("Logging Advice Called");
 	}
 	
-	@Before("allGetters()")
+	@Before("allCircleMethods() || allSubPackageMethods()")
 	public void securityAdvice() 
 	{
 		System.out.println("Security Advice Called");
 	}
 	
-	@Pointcut("execution(public * get*(..))")
-	public void allGetters() {};
+	@Pointcut("execution(* get*(..))")
+	public void allGetters() {}
+	
+	@Pointcut("within(aop.model.CircleModel)")
+	public void allCircleMethods(){}
+	
+	@Pointcut("within(aop.model.*)") // All Classes inside aop.model package
+	public void allPackageMethods(){}
+	
+	@Pointcut("within(aop..*)") // All Classes inside aop package and its subpackages
+	public void allSubPackageMethods(){}
+	
 }
