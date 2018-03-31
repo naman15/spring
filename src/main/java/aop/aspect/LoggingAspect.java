@@ -1,5 +1,6 @@
 package aop.aspect;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -9,16 +10,22 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingAspect 
 {
-	@Before("allGetters() && allCircleMethods()")
-	public void loggingAdvice() 
+	@Before("allCircleMethods()")
+	public void loggingAdvice(JoinPoint jp) 
 	{
-		System.out.println("Logging Advice Called");
+		System.out.println(jp.getSignature() + "  " +jp.getTarget().toString());
 	}
 	
 	@Before("allCircleMethods() || allSubPackageMethods()")
 	public void securityAdvice() 
 	{
 		System.out.println("Security Advice Called");
+	}
+	
+	@Before("args(name)")
+	public void argAdvice(JoinPoint jp,String name) 
+	{
+		System.out.println("Advice Called for Method : "+ jp.getSignature() +" with Argument: "+name);
 	}
 	
 	@Pointcut("execution(* get*(..))")
