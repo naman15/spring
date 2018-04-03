@@ -43,5 +43,5 @@
 	<bean id="shapeService" class="aop.service.ShapeService"/>
 	<context:annotation-config />
 	<aop:aspectj-autoproxy/>
-	<context:component-scan base-package="beans, aop.aspect" />
+	<context:component-scan base-package="beans.dao, aop.aspect" />
 </beans>
