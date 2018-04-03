@@ -30,6 +30,10 @@
 			</list>
 		</property>
 	</bean>
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver"/>
+		<property name="url" value="jdbc:derby://localhost:1527//home/naman/db;create=true" />
+	</bean>
 	<bean id="circleModel" class="aop.model.CircleModel">
 		<property name="name" value="circleModel"></property>
 	</bean>
