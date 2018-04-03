@@ -11,6 +11,6 @@ public class JdbcService
 	{
 		ApplicationContext context=new ClassPathXmlApplicationContext("spring.xml");
 		JdbcDaoImpl daoObj= context.getBean("jdbcDaoImpl",JdbcDaoImpl.class);
-		System.out.println(daoObj.getCircleCount());
+		System.out.println(daoObj.getCircle(1).getName());
 	}
 }
