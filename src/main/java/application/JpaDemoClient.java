@@ -13,5 +13,7 @@ public class JpaDemoClient
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		EmployeeRepo empRepo=context.getBean(EmployeeRepo.class);
 		System.out.println(empRepo.getById(1));
+		System.out.println(empRepo.insert("Naman", 9999));
+		empRepo.deleteById(2);
 	}
 }

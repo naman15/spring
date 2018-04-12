@@ -19,4 +19,17 @@ public class EmployeeRepo
 	{
 		return em.find(Employee.class,id);	
 	}
+	
+	@Transactional
+	public Employee insert(String name,int salary) 
+	{
+		Employee emp=new Employee(name, salary);
+		return em.merge(emp);
+	}
+	
+	public void  deleteById(int id) 
+	{
+		Employee emp=getById(id);
+		 em.remove(emp);
+	}
 }
